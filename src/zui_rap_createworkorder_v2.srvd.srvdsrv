@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Definition for Create WO app Cloud'
+define service ZUI_RAP_CREATEWORKORDER_V2 {
+  expose zc_rap_workorder_h;
+}

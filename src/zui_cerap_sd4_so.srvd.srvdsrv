@@ -1,0 +1,4 @@
+@EndUserText.label: 'SO data from on-prem using custom entity'
+define service ZUI_CERAP_SD4_SO {
+  expose ZCE_SO_DS4;
+}

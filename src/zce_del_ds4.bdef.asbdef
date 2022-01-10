@@ -1,0 +1,17 @@
+unmanaged implementation in class zbp_ce_del_ds4 unique;
+//strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZCE_DEL_DS4 //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  //  create;
+  //  update;
+  //  delete;
+
+  mapping for ZCE_DEL_DS4 corresponding;
+
+  action ( features : instance ) createGlobeWorkOrderDEL result [1] $self;
+}

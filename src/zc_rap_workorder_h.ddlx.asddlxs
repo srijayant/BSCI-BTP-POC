@@ -1,0 +1,46 @@
+@Metadata.layer: #CORE
+
+@UI.selectionVariant: [
+{ qualifier: 'manageHU',
+  text: 'Manage HU' }
+]
+
+
+@UI: {
+  headerInfo: { typeName: 'Globe Work Order',
+                typeNamePlural: 'Globe Work Order',
+                title: { type: #STANDARD, label: 'Work Order', value: 'WorkOrder' } },
+  presentationVariant: [{ sortOrder: [{ by: 'WorkOrder', direction:  #DESC }] }] }
+
+annotate view zc_rap_workorder_h with
+{
+  @UI.facet: [ { id:              'GlobeWorkOrder',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Globe WorkOrder',
+                 position:        10 } ]
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Work Order' } ],
+          identification: [ { position: 10, label: 'Work Order' } ],
+          selectionField: [ { position: 10 } ] }
+  WorkOrder;
+  @UI: {  lineItem:       [ { position: 20, label: 'Sales Order' } ],
+      identification: [ { position: 20 , label: 'Sales Order'} ],
+      selectionField: [ { position: 20 } ] }
+  SalesOrder;
+  @UI.lineItem:       [ { position: 30, label: 'Delivery' } ]
+  @UI.identification: [ { position: 30 , label: 'Delivery'} ]
+  @UI.selectionField: [{  position: 30 }]
+  DeliveryDoc;
+  @UI: {  lineItem:       [ { position: 40, label: 'Handeling Unit' } ],
+      identification: [ { position: 40 , label: 'Handeling Unit'} ] }
+  @UI.selectionField: [{  position: 40 }]
+  HandelingUnit;
+  @UI: {  lineItem:       [ { position: 50, label: 'Created By' } ],
+      identification: [ { position: 50 , label: 'Created By'} ] }
+
+  CreatedBy;
+  @UI: {  lineItem:       [ { position: 60, label: 'Created On' } ],
+      identification: [ { position: 60 , label: 'Created On'} ] }
+  CreatedOn;
+}

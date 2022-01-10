@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def for SO witCE'
+define service ZUI_RAP_SO {
+  expose ZC_RAP_SO;
+}

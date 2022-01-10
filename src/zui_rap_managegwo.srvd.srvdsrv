@@ -1,0 +1,7 @@
+@EndUserText.label: 'Serv Def for Manage Globe Work Orders'
+define service ZUI_RAP_MANAGEGWO {
+  expose ZCE_SO_DS4;
+  expose ZCE_DEL_DS4;
+  expose ZCE_HU_DS4;
+  expose zc_rap_workorder_h;
+}

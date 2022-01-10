@@ -1,0 +1,31 @@
+managed implementation in class zbp_i_rap_workorder_h unique;
+//strict;
+
+define behavior for zi_rap_workorder_h alias glbworkorder
+implementation in class zbp_i_rap_glb_workorder unique
+persistent table zglb_work_ordr_h
+lock master
+//authorization master ( instance )
+etag master CreatedOn
+{
+  create;
+  update;
+  delete;
+
+  field ( numbering : managed, readonly ) gwo_uuid;
+  field ( readonly )  WorkOrder, CreatedBy, CreatedOn;
+
+  determination setWorkOrderNumber on save { create; }
+
+
+  mapping for ZGLB_WORK_ORDR_H
+  {
+    gwo_uuid = gwo_uuid;
+    WorkOrder = work_order;
+    SalesOrder = sales_order;
+    DeliveryDoc = delivery_doc;
+    HandelingUnit = handeling_unit;
+    CreatedBy = created_by;
+    CreatedOn = created_on;
+  }
+}

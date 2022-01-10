@@ -1,0 +1,7 @@
+@EndUserText.label: 'ZODATA_SCM'
+@OData.schema.name: 'cds_zui_rap_manageworkorder'
+define service ZODATA_SCM {
+ expose ZZODATA_ZC_RAP_DELIVERY; 
+ expose ZZODATA_ZC_RAP_HANDLINGUNIT; 
+ expose ZZODATA_ZC_RAP_SALESDOC; 
+ } 
